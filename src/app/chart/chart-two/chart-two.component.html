@@ -1,0 +1,30 @@
+<div class="w-full">
+  <div class="container mx-auto">
+    <h1 class="font-bold text-3xl text-center"> 計算 費波那契數 </h1>
+    <div class="flex flex-col w-fit mx-auto">
+      <div class="flex">
+        <span>Number：</span>
+        <input type="number" [(ngModel)]="source" class="w-[4rem] border-2 border-blue-400 rounded-sm text-right px-1">
+      </div>
+      <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="calcInWebWorker()"> 在 WebWorker 計算</button>
+      <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="connectShared()"> 建立 SharedWorker 連線</button>
+      <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="calcInSharedWorker()"> 在 SharedWorker 計算</button>
+      <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="disconnectShared()"> Disconnect SharedWorker</button>
+      <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="calcAtHere()"> 在 此元件中 計算</button>
+      <!-- <button class="text-white bg-slate-600 p-1 rounded-[8px] hover:scale-[1.2] transition-all duration-[10] my-2"
+        (click)="nextValueToBHS()"> 直接new值</button> -->
+      <span class="w-full text-left">result:</span>
+      <div class="bg-gray-800 text-white h-8 rounded-sm flex items-center justify-end px-2">
+        {{result}}
+      </div>
+      <span class="w-full text-right">費時：{{time}} 毫秒</span>
+    </div>
+
+  </div>
+
+</div>
